@@ -10,6 +10,7 @@ requests = "*"
 selenium = "*"
 vnstock = "*"
 pandas = "*"
+prettytable = "*"
 
 [dev-packages]
 

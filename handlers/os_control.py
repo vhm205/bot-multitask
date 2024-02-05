@@ -2,11 +2,12 @@ import subprocess
 import platform
 from telegram import Update
 from telegram.ext import ContextTypes
-from helpers.utils import *
+from helpers.utils import extract_text_from_command
 
 # https://core.telegram.org/bots/api#markdownv2-style
 def get_help_options():
     return r"""*🔖 Danh sách options:*
+    wakeup \- Wake up
     sleep \- Sleep the computer
     shutdown \- Shutdown the computer
     restart \- Restart the computer
@@ -16,6 +17,11 @@ def get_help_options():
 async def os_control_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     message = update.message.text
     _, option = extract_text_from_command(message)
+
+    run_wakeup = {
+        "Darwin": ["osascript", "-e", "tell application \"System Events\" to key code 123"],
+        # "Darwin": ["caffeinate", "-u", "-t", "2"],
+    }
 
     run_sleep = {
         "Darwin": ["pmset", "sleepnow"],
@@ -42,6 +48,8 @@ async def os_control_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     }
 
     match option:
+        case "wakeup":
+            subprocess.run(run_wakeup[platform.system()])
         case "sleep":
             subprocess.run(run_sleep[platform.system()])
         case "shutdown":

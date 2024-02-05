@@ -26,7 +26,7 @@ def get_commands():
             'description': 'Random food',
         },
         {
-            'command': 'find',
+            'command': 'search',
             'description': 'Search with google',
         },
         {

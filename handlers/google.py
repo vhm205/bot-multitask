@@ -7,6 +7,6 @@ async def google_handler(update: Update, _: ContextTypes.DEFAULT_TYPE):
     reply_message = ""
     for result in search_results:
         reply_message += result + "\n"
-        reply_message += "-----------"
+        reply_message += "-----------\n"
 
     await update.message.reply_text(reply_message)
