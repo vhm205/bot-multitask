@@ -18,8 +18,8 @@ def get_commands():
             'description': 'Get the bot info',
         },
         {
-            'command': 'os',
-            'description': 'Control OS',
+            'command': 'stock',
+            'description': 'Finance stock data',
         },
         {
             'command': 'food',
@@ -30,9 +30,9 @@ def get_commands():
             'description': 'Search with google',
         },
         {
-            'command': 'finance',
-            'description': 'Finance stock data',
-        }
+            'command': 'os',
+            'description': 'Control OS',
+        },
     ]
     return menu
 

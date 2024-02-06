@@ -7,10 +7,9 @@ name = "pypi"
 googlesearch-python = "*"
 python-telegram-bot = "*"
 requests = "*"
-selenium = "*"
-vnstock = "*"
 pandas = "*"
 prettytable = "*"
+numerize = "*"
 
 [dev-packages]
 
