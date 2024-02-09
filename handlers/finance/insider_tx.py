@@ -14,7 +14,7 @@ async def get_insider_tx(code: str):
     if status != 200 or data is None:
         return None, data['message']
 
-    return data[:10]
+    return data[:10], None
 
 async def insider_tx_reply_handler(update: Update, _: ContextTypes.DEFAULT_TYPE):
     message = update.message.text

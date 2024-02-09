@@ -13,3 +13,7 @@ def extract_option_from_command(command: str):
         option[key] = value
 
     return option
+
+def format_number(number, is_trim_last_zero = True):
+    formated =  "{:,}".format(number)
+    return formated if not is_trim_last_zero else formated.rstrip("0").rstrip(".")
