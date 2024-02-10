@@ -15,3 +15,7 @@
 
 - Open-source
   https://telegram.org/apps
+
+- News
+  https://vneconomy.vn/chung-khoan.htm
+  https://cafef.vn/tim-kiem.chn?keywords=fpt
