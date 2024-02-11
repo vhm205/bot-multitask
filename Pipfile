@@ -10,6 +10,7 @@ requests = "*"
 pandas = "*"
 prettytable = "*"
 numerize = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 

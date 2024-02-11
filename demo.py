@@ -1,19 +1,18 @@
+import requests
+from bs4 import BeautifulSoup
+
 def test():
-    return { "a": 1 } #, { "b": 2 }
+    target = 'https://vneconomy.vn/tim-kiem.htm?q=fpt'
 
-# ( result, _ ) = test()
-# print(result)
+    response = requests.get(target)
+    response.raise_for_status()
+    soup = BeautifulSoup(response.content, 'html.parser')
 
-ref = f"https://simplize.vn/co-phieu/FPT/ho-so-doanh-nghiep#ban-lanh-dao"
-print(ref)
+    print(soup)
+    articles = soup.find_all('article', class_='story')
+    print(articles)
 
-# from vnstock import *
-
-# dividen_history = dividend_history("VCB")
-# print(dividen_history)
-
-# info = company_overview('TCB')
-# print(info)
+test()
 
 # response = requests.get('https://api.ipify.org?format=json')
 # print(response.content)
