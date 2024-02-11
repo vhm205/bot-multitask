@@ -1,0 +1,7 @@
+entrypoint = "main.py"
+
+run = "python main.py"
+
+language = "python"
+
+hidden = ["Pipfile.lock", "todo.md", "README.md"]
