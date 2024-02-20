@@ -18,6 +18,10 @@ def get_commands():
             'description': 'Get the bot info',
         },
         {
+            'command': 'ai',
+            'description': 'Gemini AI',
+        },
+        {
             'command': 'stock',
             'description': 'Finance stock data',
         },

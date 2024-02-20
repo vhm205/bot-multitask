@@ -10,7 +10,7 @@ shareholder_table = pt.PrettyTable([
     "ID", "Share held", "Current Value", "Change"
 ])
 
-async def get_shareholder_info(code: str):
+def get_shareholder_info(code: str):
     stock_code = code.upper()
     response = requests.get(f"https://api.simplize.vn/api/company/ownership/shareholder-fund-details/{stock_code}")
     data = json.loads(response.content)
@@ -27,7 +27,7 @@ async def get_shareholder_info(code: str):
 async def shareholder_reply_handler(update: Update, _: ContextTypes.DEFAULT_TYPE):
     message = update.message.text
     logging.info("Shareholder message %s", message)
-    shareholders, msg = await get_shareholder_info(message)
+    shareholders, msg = get_shareholder_info(message)
 
     if shareholders is None:
         return await update.message.reply_text(msg)

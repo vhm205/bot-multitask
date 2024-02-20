@@ -47,16 +47,19 @@ async def os_control_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "Windows": ["shutdown", r"\l"]
     }
 
-    match option:
-        case "wakeup":
-            subprocess.run(run_wakeup[platform.system()])
-        case "sleep":
-            subprocess.run(run_sleep[platform.system()])
-        case "shutdown":
-            subprocess.run(run_shutdown[platform.system()])
-        case "restart":
-            subprocess.run(run_restart[platform.system()])
-        case "logout":
-            subprocess.run(run_logout[platform.system()])
-        case _:
-            await ctx.bot.send_message(chat_id=update.effective_chat.id, text=get_help_options(), parse_mode="MarkdownV2")
+    try:
+        match option:
+            case "wakeup":
+                subprocess.run(run_wakeup[platform.system()])
+            case "sleep":
+                subprocess.run(run_sleep[platform.system()])
+            case "shutdown":
+                subprocess.run(run_shutdown[platform.system()])
+            case "restart":
+                subprocess.run(run_restart[platform.system()])
+            case "logout":
+                subprocess.run(run_logout[platform.system()])
+            case _:
+                await ctx.bot.send_message(chat_id=update.effective_chat.id, text=get_help_options(), parse_mode="MarkdownV2")
+    except Exception as e:
+        print(f'{type(e).__name__}: {e}')
