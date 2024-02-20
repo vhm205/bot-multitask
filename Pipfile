@@ -11,6 +11,8 @@ pandas = "*"
 prettytable = "*"
 numerize = "*"
 beautifulsoup4 = "*"
+google-generativeai = "*"
+ipython = "*"
 
 [dev-packages]
 
