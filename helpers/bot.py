@@ -13,6 +13,7 @@ from handlers.os_control import os_control_handler
 from handlers.random_food import random_food_handler
 from handlers.finance import finance_command_handler
 from handlers.gemeni_ai import google_ai_handler
+from handlers.short_url import short_url_handler
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -65,10 +66,11 @@ def init():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("info", get_bot))
+    app.add_handler(CommandHandler("food", random_food_handler))
+    app.add_handler(CommandHandler("short", short_url_handler))
+    app.add_handler(CommandHandler("search", google_handler))
     app.add_handler(CommandHandler("ai", google_ai_handler))
     app.add_handler(CommandHandler("os", os_control_handler))
-    app.add_handler(CommandHandler("food", random_food_handler))
-    app.add_handler(CommandHandler("search", google_handler))
 
     finance_command_handler(app)
 

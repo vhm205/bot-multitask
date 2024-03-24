@@ -11,8 +11,9 @@ def extract_option_from_command(command: str):
     option = {}
 
     for opt in cmd:
-        key, value = opt.split('=')
-        option[key] = value
+        values = opt.split('=')
+        key = values.pop(0)
+        option[key] = ''.join(values)
 
     return option
 

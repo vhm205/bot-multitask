@@ -1,3 +1,6 @@
+- Hoji AI
+  https://app.hoji.ai/
+
 - Puzzlebot
   https://cp.puzzlebot.top/
 

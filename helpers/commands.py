@@ -18,10 +18,6 @@ def get_commands():
             'description': 'Get the bot info',
         },
         {
-            'command': 'ai',
-            'description': 'Gemini AI',
-        },
-        {
             'command': 'stock',
             'description': 'Finance stock data',
         },
@@ -30,8 +26,16 @@ def get_commands():
             'description': 'Random food',
         },
         {
+            'command': 'short',
+            'description': 'Create short url',
+        },
+        {
             'command': 'search',
             'description': 'Search with google',
+        },
+        {
+            'command': 'ai',
+            'description': 'Gemini AI',
         },
         {
             'command': 'os',
