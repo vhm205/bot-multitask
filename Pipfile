@@ -4,15 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-googlesearch-python = "*"
-python-telegram-bot = "*"
-requests = "*"
+googlesearch-python = "==1.2.3"
+python-telegram-bot = "==21.0.1"
+requests = "==2.31.0"
 pandas = "*"
-prettytable = "*"
-numerize = "*"
+prettytable = "==3.10.0"
+numerize = "==0.12"
 beautifulsoup4 = "*"
 google-generativeai = "*"
-ipython = "*"
+ipython = "==8.22.2"
 
 [dev-packages]
 
