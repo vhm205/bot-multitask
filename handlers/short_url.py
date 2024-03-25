@@ -12,10 +12,9 @@ api_version = os.environ.get('SHORTEN_API_VERSION') or "v1"
 def get_help_options():
     return r"""*🔖 Danh sách options:*
     m/method\=edit \- Edit short url \(default is create\)
-    c/custom\=custom-name \- Custom short url
+    c/custom\=custom\-name \- Custom short url
     id \- Short url id
-    url \- Original url
-    """
+    url \- Original url"""
 
 def create_short_url(url: str, custom_name: str = None):
     response = requests.post(
