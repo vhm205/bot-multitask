@@ -12,12 +12,14 @@ api_version = os.environ.get('SHORTEN_API_VERSION') or "v1"
 def get_help_options():
     return r"""*🔖 Danh sách options:*
     m/method\=edit \- Edit short url \(default is create\)
+    c/custom\=custom-name \- Custom short url
     id \- Short url id
     url \- Original url
     """
 
-def create_short_url(url: str):
-    response = requests.post(f"{api_domain}/api/{api_version}/hidden", json={"url": url})
+def create_short_url(url: str, custom_name: str = None):
+    response = requests.post(
+        f"{api_domain}/api/{api_version}/hidden", json={"url": url, "backHalf": custom_name})
     data = json.loads(response.content)
     return data
 
@@ -31,6 +33,7 @@ async def short_url_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         message = update.message.text
         option = extract_option_from_command(message)
         method = option.get("m") or option.get("method")
+        custom_name = option.get("c") or option.get("custom")
         mid = option.get("id")
         original_url = option.get("url")
 
@@ -41,7 +44,7 @@ async def short_url_handler(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         if method == "edit":
             result = update_short_url(original_url, mid)
         else:
-            result = create_short_url(original_url)
+            result = create_short_url(original_url, custom_name)
 
         reply_text = f"This is your short url: {result['shortUrl']}"
 
