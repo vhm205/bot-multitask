@@ -22,3 +22,6 @@
 - News
   https://vneconomy.vn/chung-khoan.htm
   https://cafef.vn/tim-kiem.chn?keywords=fpt
+
+- Hosting
+  https://medium.com/@alisdair_/5-top-free-hosting-platforms-for-python-apps-2024-best-heroku-alternatives-c31c0a2837d1

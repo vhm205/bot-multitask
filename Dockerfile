@@ -10,6 +10,7 @@ COPY Pipfile ./
 # Install Pipenv
 RUN pip install pipenv
 
+# Install Dependencies
 RUN pipenv install --deploy
 
 # Copy Bot Code

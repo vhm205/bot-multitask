@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  bot:
+    image: vhm205/bot-multitask:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: bot-multitask
+    env_file:
+      - .env
