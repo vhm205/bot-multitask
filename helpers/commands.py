@@ -26,6 +26,10 @@ def get_commands():
             'description': 'Random food',
         },
         {
+            'command': 'file',
+            'description': 'File utils',
+        },
+        {
             'command': 'short',
             'description': 'Create short url',
         },
