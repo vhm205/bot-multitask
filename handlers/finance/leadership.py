@@ -1,7 +1,6 @@
 import logging
 import requests
 import json
-import asyncio
 from telegram import Update, ReplyKeyboardRemove
 from telegram.ext import ContextTypes
 

@@ -14,6 +14,7 @@ from handlers.random_food import random_food_handler
 from handlers.finance import finance_command_handler
 from handlers.gemeni_ai import google_ai_handler
 from handlers.short_url import short_url_handler
+from handlers.file_utils import file_utils_command_handler
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -73,6 +74,7 @@ def init():
     app.add_handler(CommandHandler("os", os_control_handler))
 
     finance_command_handler(app)
+    file_utils_command_handler(app)
 
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
     app.add_error_handler(error_handler)
